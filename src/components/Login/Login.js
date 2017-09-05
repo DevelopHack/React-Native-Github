@@ -13,6 +13,7 @@ import SingInScreen from './SingInScreen';
 
 const logo = require('../../asset/img/github_icon.png');
 export default class Login extends Component{
+      
     render(){
         return(
             <View style={styles.container}>
@@ -21,7 +22,7 @@ export default class Login extends Component{
                     <Text style={styles.title}>Github</Text>
                 </View>
                 <View >
-                    <SingInScreen />
+                    <SingInScreen navigate = {this.props.navigate}/>                   
                 </View>
             </View>
         );
