@@ -6,10 +6,11 @@ import React, {Component} from 'react';
 import {
     Button,
     View,
+    Alert,
 }from 'react-native';
 import Login from './Login/Login';
 
-export default class Main extends Component{        
+export default class Main extends Component{ 
     render(){
         const  {navigate} = this.props.navigation;
         return(

@@ -26,7 +26,7 @@ export default class SingInScreen extends Component{
                 placeholder = "password"
                 style={styles.textBox}
                 secureTextEntry = {true}
-            />
+            />           
             <TouchableOpacity onPress={()=>nav('Sing')}  style= {styles.buttonContainer}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
