@@ -3,28 +3,34 @@
  * @Lionel Diaz Moron
  */
 import React, {Component} from 'react';
-import { StackNavigator } from 'react-navigation';
-import Profile from '../components/Profile/Profile';
-import Main from '../components/Main';
+import {connect} from 'react-redux';
+import {addNavigationHelpers, StackNavigator } from 'react-navigation';
+
+//import Main from '../components/Main';
+import MainContainer from '../containers/MainContainer';
 import ProfileContainer from '../containers/ProfileContainer';
 
-const Nav = StackNavigator({
+export const AppNav = StackNavigator({
     Home:{
-        screen: Main,
-        navigationOptions:  ({
-           // title:'CHAT'
+        screen: MainContainer,
+        navigationOptions:({
             header: null,         
         }),
     },
     Sing: {
         screen: ProfileContainer,
-        navigationOptions:  ({
+        navigationOptions:({
             header: null,          
         }),
     }
-   
 });
 
-export const AppNavigation =()=>(
-    <Nav/>
+const AppNavigation =({dispatch, nav})=>(
+    <AppNav navigation={addNavigationHelpers({dispatch, state: nav})}/>
 );
+const mapStateToProps = state => ({
+    nav: state.nav,
+});
+
+export default connect(mapStateToProps)(AppNavigation);
+

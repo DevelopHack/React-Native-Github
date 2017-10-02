@@ -11,34 +11,35 @@ import {
     TouchableOpacity,
     StyleSheet,
 } from 'react-native';
+
 export default class SingInScreen extends Component{    
-   
     render(){
-        const nav = this.props.navigate;
         return (
-            
-        <View style={styles.container}>                 
-            <TextInput
-                placeholder = "username github"
-                style={styles.textBox}
-            />
-            <TextInput
-                placeholder = "password"
-                style={styles.textBox}
-                secureTextEntry = {true}
-            />           
-            <TouchableOpacity onPress={()=>nav('Sing')}  style= {styles.buttonContainer}>
-                <Text style={styles.buttonText}>Login</Text>
-            </TouchableOpacity>
-    </View>
+            <View style={styles.container}>                 
+                <TextInput
+                    value={this.props.userName}
+                    placeholder = "username github"
+                    style={styles.textBox}
+                />
+                <TextInput
+                    value={this.props.password}
+                    placeholder = "password"
+                    style={styles.textBox}
+                    secureTextEntry = {true}
+                />           
+                <TouchableOpacity onPress={this.props.onLogin} style= {styles.buttonContainer}>
+                    <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>  
+            </View>
         );
     }
 }
-   
-SingInScreen.propTypes ={
-    
-}
+SingInScreen.propTypes={   
+    onLogin: PropTypes.func.isRequired,
+    userName: PropTypes.string,
+    password: PropTypes.string,
 
+}
 const styles = StyleSheet.create({
      container:{
         padding: 20
@@ -66,5 +67,6 @@ const styles = StyleSheet.create({
         fontWeight:'700'
     }
 })
+
 
 

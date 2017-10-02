@@ -3,7 +3,7 @@
  * @Lionel Diaz Moron
  */
 import React, {Component} from 'react';
-import {AppNavigation} from './config/routers';
+import AppNavigation from './config/routers';
 
 export default class App extends Component{
     render(){
@@ -12,3 +12,4 @@ export default class App extends Component{
         );
     }
 }
+

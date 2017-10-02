@@ -1,3 +1,15 @@
+/**
+ * React Native with Github
+ * @Lionel Diaz Moron
+ */
+/**
+ * This function sends us for the view Profile 
+ */
+export function viewProfile(){
+    return {
+        type: 'SING',
+    }
+}
 export function receiveGet(json){    
     return {
         type: 'RECIEVE_GET',        
@@ -21,6 +33,10 @@ export function yourPofile(){
         }
     }
 }
+/**
+ * This function recieved a object Json with each repository existing. 
+ * @param {*} repoJson 
+ */
 export function recieveRepos(repoJson){
     return {
         type: 'RECEIVE_REPOS',

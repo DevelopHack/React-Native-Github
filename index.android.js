@@ -19,9 +19,12 @@ export default class Github extends Component {
   render() {
     return (
       <Provider store={store}>  
-        <App/>
+        <App />       
       </Provider> 
     );
   }
 }
 AppRegistry.registerComponent('Github', () => Github);
+
+
+

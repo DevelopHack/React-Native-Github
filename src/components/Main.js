@@ -11,10 +11,9 @@ import {
 import Login from './Login/Login';
 
 export default class Main extends Component{ 
-    render(){
-        const  {navigate} = this.props.navigation;
+    render(){     
         return(
-            <Login navigate = {navigate} /> 
+            <Login onLogin = {this.props.onLogin}/> 
         );
     }
 } 

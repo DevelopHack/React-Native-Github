@@ -15,19 +15,18 @@ import TabNavContainer from './TabNavContainer';
 import RepoContainer from './RepoContainer';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default class Profile extends Component{    
-    constructor(props){
-        super(props);        
-    }
+export default class Profile extends Component{   
+    /**
+     * This function is executed automatically when the view is load
+     */
     componentDidMount(){
         this.props.onGetProfile();
         this.props.onReposProfile();
     }
     render(){      
-       
+        
         return (
-            <View style={styles.container}>
-                {/* {infoProfile} */}
+            <View style={styles.container}>               
                 {this.props.profile.map((p,i) =>
                     (
                         <View key={i} style={styles.headerContainer}>
@@ -42,9 +41,8 @@ export default class Profile extends Component{
                 )}                   
                 <View style={styles.navigationContainer}>
                      <TabNavContainer />          
-                </View>
-               {/* {repoContainer} */}
-                <ScrollView>                   
+                </View>              
+                <ScrollView>    
                     {this.props.repository.map(repo =>
                         repo.map((r,i)=>(
                             <View key={i} style={styles.containerRepo}>
