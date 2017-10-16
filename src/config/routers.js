@@ -17,7 +17,7 @@ export const AppNav = StackNavigator({
             header: null,         
         }),
     },
-    Sing: {
+    Sing: { 
         screen: ProfileContainer,
         navigationOptions:({
             header: null,          

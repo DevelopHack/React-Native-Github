@@ -7,7 +7,7 @@ import {
     View,
     Image,
     Text,
-    StyleSheet
+    StyleSheet,
 } from 'react-native';
 import SingInScreen from './SingInScreen';
 
@@ -21,7 +21,10 @@ export default class Login extends Component{
                     <Text style={styles.title}>Github</Text>
                 </View>
                 <View >
-                    <SingInScreen onLogin = {this.props.onLogin}/>                                  
+                    <SingInScreen 
+                        onLogin = {this.props.onLogin}
+                        onUserNameUpdate = {this.props.onUserNameUpdate}                       
+                    />                                  
                 </View>
             </View>
         );
@@ -39,11 +42,12 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     logo:{
-        width:100,
-        height:100,
+        width: 100,
+        height: 100,
     },
     title:{
         fontSize: 30,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: 'serif',
     },
 })

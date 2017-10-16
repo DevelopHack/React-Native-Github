@@ -3,20 +3,23 @@
  * @Lionel Diaz Moron
  */
 import {connect} from 'react-redux';
-import {viewProfile} from '../actions';
+import {viewProfile, updateUserName, updatePassword } from '../actions/loginAction';
 
 import Main from '../components/Main';
 
 const mapStateToProps = (state) =>(
-    {       
+    {   
+        nav: state.nav,
         userName: state.userName,
-        password: state.password,
     }
 )
 
 const mapDispatchToProps = (dispatch)=>(
     {
-        onLogin:()=>{
+        onUserNameUpdate:(value)=>{
+            dispatch(updateUserName(value))
+        },
+        onLogin:()=>{   
             dispatch(viewProfile())
         }
     }

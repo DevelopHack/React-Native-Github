@@ -3,17 +3,15 @@
  * @Lionel Diaz Moron
  */
 import React, {Component} from 'react';
-import {
-    Button,
-    View,
-    Alert,
-}from 'react-native';
 import Login from './Login/Login';
 
 export default class Main extends Component{ 
-    render(){     
+    render(){   
         return(
-            <Login onLogin = {this.props.onLogin}/> 
+            <Login 
+                onLogin = {this.props.onLogin}
+                onUserNameUpdate = {this.props.onUserNameUpdate}              
+            /> 
         );
     }
 } 
