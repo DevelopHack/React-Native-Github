@@ -1,7 +1,3 @@
-/**
- * React Native with Github
- * @Lionel Diaz Moron
- */
 import { combineReducers } from 'redux';
 import { NavigationActions } from 'react-navigation';
 import { AppNav } from '../config/routers';
